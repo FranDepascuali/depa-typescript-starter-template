@@ -1,8 +1,6 @@
 // This file is meant to be deleted when you clone the project
 // Sample TypeScript index.ts content
-import { APP_VERSION, DEFAULT_TIMEOUT } from './constants'
-import { Address, Company, Person, User } from './interfaces'
-import { PI, calculateSum, multiply } from './utils'
+import { User } from './interfaces'
 
 class Greeter {
   greeting: string

@@ -7,6 +7,8 @@
     "dev": "tsx src/index.ts --outDir dist --watch"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",

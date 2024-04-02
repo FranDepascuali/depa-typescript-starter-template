@@ -1,6 +1,6 @@
 // This file is meant to be deleted when you clone the project
 // Sample TypeScript index.ts content
-import { User } from './interfaces'
+import { User } from './interfaces.js'
 
 class Greeter {
   greeting: string

@@ -6,7 +6,12 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'prettier',
+  ],
   root: true,
   env: {
     node: true,
@@ -17,6 +22,7 @@ module.exports = {
     'build/**/*.*',
     'dist/**/*.*',
     'node_modules',
+    'vite.config.ts',
   ],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',

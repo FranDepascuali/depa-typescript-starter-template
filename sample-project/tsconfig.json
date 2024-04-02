@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2020",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -18,13 +18,20 @@
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ]
+    },
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
+    "vite.config.ts",
+    "./build.ts",
     "node_modules",
-    "dist"
+    "**/dist"
   ]
 }

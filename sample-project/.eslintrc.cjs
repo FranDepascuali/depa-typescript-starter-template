@@ -5,7 +5,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'import'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended-type-checked',
@@ -31,6 +31,40 @@ module.exports = {
     '.eslintrc.js',
   ],
   rules: {
+    'node/no-missing-import': 'off',
+    'node/no-empty-function': 'off',
+    'node/no-unsupported-features/es-syntax': 'off',
+    'node/no-missing-require': 'off',
+    'import/extensions': [
+      'error',
+      'always',
+      {
+        ignorePackages: true,
+        pattern: {
+          '': 'always',
+          ts: 'never',
+          js: 'always',
+        },
+      },
+    ],
+    '@typescript-eslint/no-misused-promises': 'error',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
+        fixStyle: 'inline-type-imports',
+      },
+    ],
+    'node/no-unpublished-import': [
+      'error',
+      {
+        allowModules: ['vitest'],
+      },
+    ],
+    '@typescript-eslint/require-await': 'error',
+    '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -38,5 +72,27 @@ module.exports = {
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
     '@typescript-eslint/array-type': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-redundant-type-constituents': 'warn',
+    '@typescript-eslint/no-floating-promises': 'error',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'node/no-unpublished-import': 'off',
+    'no-implicit-coercion': [
+      'error',
+      {
+        boolean: true,
+        number: true,
+        string: true,
+      },
+    ],
+    eqeqeq: ['error', 'always'],
+    'no-inner-declarations': 'off',
   },
 }
